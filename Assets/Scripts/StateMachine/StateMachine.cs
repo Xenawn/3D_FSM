@@ -10,7 +10,7 @@ public interface IState
     public void Update();
     public void PhysicsUpdate();
 }
-public abstract class SateMachine
+public abstract class StateMachine
 {
     protected IState currentState;
     public void ChangeState(IState state)
@@ -20,7 +20,7 @@ public abstract class SateMachine
         currentState?.Enter();
     }
 
-    public void HandleINput()
+    public void HandleInput()
     {
         currentState?.HandleInput();
     }
